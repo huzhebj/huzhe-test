@@ -1,4 +1,4 @@
-package com.hualala.util;
+package com.test.util;
 
 import java.util.HashMap;
 import java.util.Map;

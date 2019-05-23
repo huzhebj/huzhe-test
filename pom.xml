@@ -319,7 +319,7 @@
                 <!--打包只能用1.4.2.RELEASE 版本的，其它版本的都不可以。目前还未看到官方的解说-->
                 <version>1.4.2.RELEASE</version>
                 <configuration>
-                    <mainClass>com.hualala.shop.mall.Application</mainClass>
+                    <mainClass>com.test.shop.mall.Application</mainClass>
                 </configuration>
             </plugin>
 

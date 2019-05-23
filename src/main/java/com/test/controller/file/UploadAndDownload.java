@@ -1,6 +1,6 @@
-package com.hualala.controller.file;
+package com.test.controller.file;
 
-import com.hualala.util.DataUtil;
+import com.test.util.DataUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
