@@ -19,6 +19,7 @@ public class TestCase {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         MyCallable myCallable = new MyCallable();
         Future<Student> submit = executorService.submit(myCallable);
+        executorService.shutdown();
         Student student = submit.get();
         System.out.println(student);
     }
