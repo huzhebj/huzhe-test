@@ -246,104 +246,30 @@
 
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>protoc-plugin</id>
-            <url>https://dl.bintray.com/sergei-ivanov/maven/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>public</id>
-            <name>Public Repositories</name>
-            <url>http://repo.hualala.com/nexus/content/groups/Public/</url>
-        </repository>
-        <repository>
-            <id>gozap</id>
-            <name>gozap Repository</name>
-            <url>http://repo.gozap.com/repos/content/groups/public</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>gozap-snapshots</id>
-            <name>gozap snapshots</name>
-            <url>http://repo.gozap.com/repos/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>gozap</id>
-            <name>gozap构件发布版仓库</name>
-            <url>http://repo.gozap.com/repos/content/repositories/gozap</url>
-        </repository>
-        <snapshotRepository>
-            <id>gozap_snapshots</id>
-            <name>gozap构件快照版仓库</name>
-            <url>http://repo.gozap.com/repos/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <build>
-        <plugins>
-            <!-- compiler -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--打包只能用1.4.2.RELEASE 版本的，其它版本的都不可以。目前还未看到官方的解说-->
-                <version>1.4.2.RELEASE</version>
-                <configuration>
-                    <mainClass>com.test.shop.mall.Application</mainClass>
-                </configuration>
-            </plugin>
-
-        </plugins>
         <resources>
-            <!-- 打包时将jsp文件拷贝到META-INF目录下 -->
             <resource>
-                <!-- 指定resources插件处理哪个目录下的资源文件 -->
-                <directory>src/main/webapp</directory>
-                <!--注意此次必须要放在此目录下才能被访问到 -->
-                <targetPath>META-INF/resources</targetPath>
+                <directory>src/main/java</directory>
                 <includes>
-                    <include>**/**</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
                 </includes>
+                <filtering>false</filtering>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/**</include>
+                    <include>**/*.*</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
         </resources>
-
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

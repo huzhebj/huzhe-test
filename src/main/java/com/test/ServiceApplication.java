@@ -15,17 +15,12 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
-public class ServiceApplication implements EmbeddedServletContainerCustomizer {
+public class ServiceApplication {
 
     private static Logger logger = LoggerFactory.getLogger(ServiceApplication.class);
 
     public static void main(String[] args) throws Exception {
         ApplicationContext ctx = SpringApplication.run(ServiceApplication.class, args);
         logger.info("service start success .....");
-    }
-
-    @Override
-    public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
-        configurableEmbeddedServletContainer.setPort(80);
     }
 }
