@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -64,5 +66,12 @@ public class TestCase {
         /*if (property != null && JSONObject.parseObject(property).getBoolean("hasEditBusinessTypeToolbarButton") == true) {
             return;
         }*/
+    }
+
+    public <T> Map<String, T> getBeansOfType(Class<T> var) throws IllegalAccessException, InstantiationException {
+        Map<String, Object> map = new HashMap<>();
+        map.put("1",(T)var.newInstance());
+        result.put(beanName, this.getBean(beanName, type));
+        return map;
     }
 }
