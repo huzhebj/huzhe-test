@@ -55,7 +55,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
-            <version>4.1.16.Final</version>
+            <version>4.1.71.Final</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
-            <version>4.1.16.Final</version>
+            <version>4.1.71.Final</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
